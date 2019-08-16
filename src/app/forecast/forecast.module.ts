@@ -6,7 +6,7 @@ import { ForecastDetailComponent } from './forecast-detail/forecast-detail.compo
 import { ForecastListComponent } from './forecast-list/forecast-list.component';
 import { ForecastLiveService } from './forecast-live.service';
 import { ForecastRoutingModule } from './forecast-routing.module';
-// //import { ForecastStaticService } from './forecast-static.service';
+import { ForecastStaticService } from './forecast-static.service';
 import { ForecastComponent } from './forecast.component';
 import { ForecastService } from './forecast.service';
 
@@ -21,6 +21,7 @@ import { ForecastService } from './forecast.service';
         ForecastComponent
     ],
     providers: [
+        ForecastStaticService,
         { provide: ForecastService, useClass: ForecastLiveService },
         { provide: FORECAST_CACHE_ADAPTER, useClass: LocalStorageCacheAdapter }
     ]
